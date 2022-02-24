@@ -13,6 +13,7 @@
     "license": "AGPL-3.0-or-later",
     "require": {
         "php": ">=5.5",
+        "psr/log": "^1.1.4",
         "ext-json": "*"
     },
     "require-dev": {
@@ -27,5 +28,8 @@
         "psr-4": {
             "Lwd\\Logger\\Tests\\": "tests/"
         }
+    },
+    "provide": {
+        "psr/log-implementation": "^1.1.4"
     }
 }
