@@ -1,1 +1,1 @@
-# lwd-php-logger
+# lwd-logger
