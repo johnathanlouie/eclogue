@@ -12,8 +12,8 @@
     "readme": "README.md",
     "license": "AGPL-3.0-or-later",
     "require": {
-        "php": ">=5.5",
-        "psr/log": "^1.1.4",
+        "php": ">=5.3",
+        "psr/log": "^1.0.0",
         "ext-json": "*"
     },
     "require-dev": {
@@ -30,6 +30,6 @@
         }
     },
     "provide": {
-        "psr/log-implementation": "^1.1.4"
+        "psr/log-implementation": "^1.0.0"
     }
 }
