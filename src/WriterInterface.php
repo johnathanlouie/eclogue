@@ -10,7 +10,7 @@ interface WriterInterface
     /**
      * Writes the log entry.
      * 
-     * @param string $category
+     * @param string|null $category
      * @param mixed $level
      * @param string $message
      * @param array $context
