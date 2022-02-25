@@ -10,7 +10,7 @@ use Lwd\Logger\WriterInterface;
 class NullWriter implements WriterInterface
 {
     /**
-     * Writes the log entry to a file.
+     * Does nothing.
      * 
      * @param string|null $category
      * @param mixed $level
