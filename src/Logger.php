@@ -11,7 +11,10 @@ use Lwd\Logger\Writers\FileWriter;
 use Exception;
 
 /**
+ * PSR-3 compliant logger.
+ * Use different log writers to extend the functionality.
  * 
+ * @see WriterInterface
  */
 class Logger extends AbstractLogger implements LoggerInterface
 {
