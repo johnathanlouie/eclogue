@@ -135,7 +135,7 @@ class Log
     /**
      * Logs with an arbitrary level.
      *
-     * @param string $level
+     * @param mixed $level
      * @param string $message
      * @param array $context
      * @return void
