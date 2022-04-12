@@ -20,7 +20,7 @@ class Logger extends AbstractLogger implements LoggerInterface
 {
     use LoggerTrait;
 
-    const LOG_LEVELS = [
+    protected const LOG_LEVELS = [
         LogLevel::EMERGENCY,
         LogLevel::ALERT,
         LogLevel::CRITICAL,
