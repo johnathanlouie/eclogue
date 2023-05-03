@@ -21,7 +21,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Lwd\\Logger\\": "src/"
+            "Lwd\\Logger\\": "src/Lwd/Logger/"
         }
     },
     "autoload-dev": {
