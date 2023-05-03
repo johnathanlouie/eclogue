@@ -1,5 +1,5 @@
 services:
-  app:
-    build: .
+  php:
+    build: docker/php
     volumes:
       - .:/app
