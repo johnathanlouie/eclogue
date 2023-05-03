@@ -26,7 +26,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Lwd\\Logger\\Tests\\": "tests/"
+            "Tests\\Unit\\Lwd\\Logger\\": "tests/Tests/Unit/Lwd/Logger/"
         }
     },
     "provide": {

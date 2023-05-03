@@ -1,6 +1,6 @@
 <?php
 
-namespace Lwd\Logger\Tests;
+namespace Tests\Unit\Lwd\Logger;
 
 use PHPUnit\Framework\TestCase;
 
