@@ -16,8 +16,8 @@ use Exception;
  * 
  * @see WriterInterface
  */
-class Logger extends AbstractLogger implements LoggerInterface
-{
+class Logger extends AbstractLogger implements LoggerInterface {
+
     use LoggerTrait;
 
     protected const LOG_LEVELS = [
@@ -43,8 +43,7 @@ class Logger extends AbstractLogger implements LoggerInterface
      * @param WriterInterface $writer Log writer.
      * @param string|null $category Loging category.
      */
-    public function __construct($writer = null, $category = null)
-    {
+    public function __construct($writer = null, $category = null) {
         if (is_null($writer)) {
             $writer = new FileWriter();
         }
@@ -58,8 +57,7 @@ class Logger extends AbstractLogger implements LoggerInterface
      * @param string $message
      * @param array $context
      */
-    protected function interpolate($message, $context = [])
-    {
+    protected function interpolate($message, $context = []) {
         // Build a replacement array with braces around the context keys.
         $replace = [];
         foreach ($context as $key => $val) {
@@ -81,8 +79,7 @@ class Logger extends AbstractLogger implements LoggerInterface
      * @return void
      * @throws InvalidArgumentException If not PSR-3 log level, or exception not in 'exception'.
      */
-    public function log($level, $message, $context = [])
-    {
+    public function log($level, $message, $context = []) {
         // Must be a PSR-3 level.
         if (!in_array($level, static::LOG_LEVELS)) {
             throw new InvalidArgumentException('Not a PSR-3 log level');
@@ -99,4 +96,5 @@ class Logger extends AbstractLogger implements LoggerInterface
         $message = $this->interpolate($message, $context);
         $this->writer->write($this->category, $level, $message, $context);
     }
+
 }

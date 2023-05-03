@@ -5,8 +5,8 @@ namespace Lwd\Logger;
 /**
  * Log writer for any output.
  */
-interface WriterInterface
-{
+interface WriterInterface {
+
     /**
      * Writes the log entry.
      * 

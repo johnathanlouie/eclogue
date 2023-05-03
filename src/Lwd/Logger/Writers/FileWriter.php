@@ -8,8 +8,8 @@ use Lwd\Logger\WriterInterface;
 /**
  * Simple log writer for a monolithic file.
  */
-class FileWriter implements WriterInterface
-{
+class FileWriter implements WriterInterface {
+
     /** @var string */
     private $filename;
 
@@ -18,8 +18,7 @@ class FileWriter implements WriterInterface
      * 
      * @param string $filename The file to write to.
      */
-    public function __construct($filename = '/var/log/apache2/error.log')
-    {
+    public function __construct($filename = '/var/log/apache2/error.log') {
         $this->filename = $filename;
     }
 
@@ -32,8 +31,7 @@ class FileWriter implements WriterInterface
      * @param array $context
      * @return void
      */
-    public function write($category, $level, $message, $context)
-    {
+    public function write($category, $level, $message, $context) {
         $timestamp = date_create()->format(DateTimeInterface::RFC3339_EXTENDED);
         $category = is_null($category) ? '' : "$category.";
         $level = strtoupper($level);
@@ -41,4 +39,5 @@ class FileWriter implements WriterInterface
         $entry = sprintf('[%s] %s%s: %s %s', $timestamp, $category, $level, $message, $context);
         file_put_contents($this->filename, $entry, FILE_APPEND);
     }
+
 }

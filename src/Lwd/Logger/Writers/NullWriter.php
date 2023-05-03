@@ -7,8 +7,8 @@ use Lwd\Logger\WriterInterface;
 /**
  * Log writer for NOP.
  */
-class NullWriter implements WriterInterface
-{
+class NullWriter implements WriterInterface {
+
     /**
      * Does nothing.
      * 
@@ -18,7 +18,8 @@ class NullWriter implements WriterInterface
      * @param array $context
      * @return void
      */
-    public function write($category, $level, $message, $context)
-    {
+    public function write($category, $level, $message, $context) {
+        
     }
+
 }
