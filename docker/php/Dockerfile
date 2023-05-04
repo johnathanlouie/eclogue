@@ -1,9 +1,6 @@
-FROM composer:2.2.6 as composer
+FROM php:5.6.40-fpm-alpine3.8
+
 WORKDIR /app
-COPY composer.json .
-CMD composer install
-# FROM php:5.5.38-apache as php
-# WORKDIR /var/www/html/api
-# COPY --from=composer /var/www/html/api/vendor ./vendor
-# RUN a2enmod rewrite
-# CMD apache2-foreground
+
+COPY --chmod=755 files/install-php-extensions /usr/local/bin/install-php-extensions
+RUN install-php-extensions xdebug @composer-1.10.26
