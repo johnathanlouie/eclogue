@@ -4,3 +4,4 @@ WORKDIR /app
 
 COPY --chmod=755 files/install-php-extensions /usr/local/bin/install-php-extensions
 RUN install-php-extensions xdebug @composer-1.10.26
+RUN ln -s /app/vendor/bin/phpunit /usr/local/bin/phpunit
