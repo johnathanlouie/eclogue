@@ -2,6 +2,6 @@ FROM php:5.6.40-fpm-alpine3.8
 
 WORKDIR /app
 
-COPY --chmod=755 files/install-php-extensions /usr/local/bin/install-php-extensions
+COPY --chmod=755 --from=mlocati/php-extension-installer:1.5.52 /usr/bin/install-php-extensions /usr/local/bin/
 RUN install-php-extensions xdebug @composer-1.10.26
 RUN ln -s /app/vendor/bin/phpunit /usr/local/bin/phpunit
