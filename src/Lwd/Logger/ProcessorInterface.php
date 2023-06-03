@@ -10,7 +10,7 @@ namespace Lwd\Logger;
 interface ProcessorInterface {
 
     /**
-     * Modify log data.
+     * Modifies log data.
      *
      * @param Log $log
      * @return Log Modified log.
