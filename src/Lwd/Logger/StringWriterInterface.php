@@ -4,6 +4,8 @@ namespace Lwd\Logger;
 
 /**
  * Log writer for any output.
+ *
+ * @author Johnathan Louie
  */
 interface StringWriterInterface {
 
