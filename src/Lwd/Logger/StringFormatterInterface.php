@@ -3,7 +3,7 @@
 namespace Lwd\Logger;
 
 /**
- * Log formatter that turns logs into one string.
+ * Log formatter that returns logs as strings.
  *
  * @author Johnathan Louie
  */
