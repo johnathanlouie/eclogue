@@ -3,6 +3,7 @@
 namespace Lwd\Logger\Drivers;
 
 use Lwd\Logger\DriverInterface;
+use Lwd\Logger\Log;
 
 /**
  * Log driver that does nothing.

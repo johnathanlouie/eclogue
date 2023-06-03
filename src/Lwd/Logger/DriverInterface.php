@@ -2,6 +2,8 @@
 
 namespace Lwd\Logger;
 
+use Exception;
+
 /**
  * Handler that processes, formats, and writes logs.
  *

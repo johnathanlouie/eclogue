@@ -2,6 +2,7 @@
 
 namespace Lwd\Logger\Processors;
 
+use Lwd\Logger\Log;
 use Lwd\Logger\ProcessorInterface;
 
 /**

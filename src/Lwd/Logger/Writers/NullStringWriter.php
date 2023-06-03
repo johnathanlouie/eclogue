@@ -2,6 +2,7 @@
 
 namespace Lwd\Logger\Writers;
 
+use Lwd\Logger\Log;
 use Lwd\Logger\StringWriterInterface;
 
 /**

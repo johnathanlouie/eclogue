@@ -2,6 +2,8 @@
 
 namespace Lwd\Logger;
 
+use Exception;
+
 /**
  * Log writer for any output.
  *
