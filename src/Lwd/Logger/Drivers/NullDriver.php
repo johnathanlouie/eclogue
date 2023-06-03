@@ -5,14 +5,17 @@ namespace Lwd\Logger\Drivers;
 use Lwd\Logger\DriverInterface;
 
 /**
- * Does nothing.
+ * Log driver that does nothing.
  *
- * @author jlouie
+ * @author Johnathan Louie
  */
 class NullDriver implements DriverInterface {
 
     /**
-     * @inheritDoc
+     * Does nothing.
+     *
+     * @param Log $log
+     * @return void
      */
     public function log($log) {
 
