@@ -24,6 +24,9 @@ class Log {
     /** @var Exception|null */
     public $exception = null;
 
+    /** @var string|null String that classifies log messages. Also known as channels. */
+    public $category = null;
+
     /** @var string|null */
     public $serverAddress = null;
 
