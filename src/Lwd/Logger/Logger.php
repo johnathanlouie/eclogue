@@ -2,25 +2,36 @@
 
 namespace Lwd\Logger;
 
-use Psr\Log\LoggerInterface;
-use Psr\Log\InvalidArgumentException;
+use Exception;
 use Psr\Log\AbstractLogger;
+use Psr\Log\InvalidArgumentException;
 use Psr\Log\LoggerTrait;
 use Psr\Log\LogLevel;
-use Lwd\Logger\Writers\FileWriter;
-use Exception;
 
 /**
  * PSR-3 compliant logger.
- * Use different log writers to extend the functionality.
- * 
- * @see WriterInterface
+ * Use different log drivers or swap driver components to extend the functionality.
+ * for the full interface specification.
+ *
+ * @see DriverInterface
+ * @see Driver
+ *
+ * The message MUST be a string or object implementing __toString().
+ *
+ * The message MAY contain placeholders in the form: {foo} where foo
+ * will be replaced by the context data in key "foo".
+ *
+ * The context array can contain arbitrary data, the only assumption that
+ * can be made by implementors is that if an Exception instance is given
+ * to produce a stack trace, it MUST be in a key named "exception".
+ *
+ * @link https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-3-logger-interface.md
  */
-class Logger extends AbstractLogger implements LoggerInterface {
+class Logger extends AbstractLogger {
 
     use LoggerTrait;
 
-    protected const LOG_LEVELS = [
+    private $LOG_LEVELS = [
         LogLevel::EMERGENCY,
         LogLevel::ALERT,
         LogLevel::CRITICAL,
@@ -31,33 +42,28 @@ class Logger extends AbstractLogger implements LoggerInterface {
         LogLevel::DEBUG,
     ];
 
-    /** @var WriterInterface Log writer. */
-    protected $writer;
+    /** @var DriverInterface Log driver. */
+    private $driver;
 
     /** @var string|null Logging category. */
-    protected $category;
+    private $category = null;
 
     /**
      * Constructs the logger.
-     * 
-     * @param WriterInterface $writer Log writer.
-     * @param string|null $category Loging category.
+     *
+     * @param DriverInterface $driver Log driver.
      */
-    public function __construct($writer = null, $category = null) {
-        if (is_null($writer)) {
-            $writer = new FileWriter();
-        }
-        $this->writer = $writer;
-        $this->category = $category;
+    public function __construct($driver) {
+        $this->driver = $driver;
     }
 
     /**
      * Replaces message placeholders with context.
-     * 
+     *
      * @param string $message
      * @param array $context
      */
-    protected function interpolate($message, $context = []) {
+    private function interpolate($message, $context = []) {
         // Build a replacement array with braces around the context keys.
         $replace = [];
         foreach ($context as $key => $val) {
@@ -66,22 +72,17 @@ class Logger extends AbstractLogger implements LoggerInterface {
                 $replace['{' . $key . '}'] = $val;
             }
         }
+
         // Interpolate replacement values into the message and return.
         return strtr($message, $replace);
     }
 
     /**
-     * Logs with an arbitrary level.
-     *
-     * @param mixed $level PSR-3 log level.
-     * @param string $message
-     * @param array $context
-     * @return void
-     * @throws InvalidArgumentException If not PSR-3 log level, or exception not in 'exception'.
+     * @inheritDoc
      */
-    public function log($level, $message, $context = []) {
+    public function log($level, $message, array $context = []) {
         // Must be a PSR-3 level.
-        if (!in_array($level, static::LOG_LEVELS)) {
+        if (!in_array($level, self::$LOG_LEVELS)) {
             throw new InvalidArgumentException('Not a PSR-3 log level');
         }
 
@@ -93,8 +94,27 @@ class Logger extends AbstractLogger implements LoggerInterface {
             }
         }
 
-        $message = $this->interpolate($message, $context);
-        $this->writer->write($this->category, $level, $message, $context);
+        try {
+            $newMessage = $this->interpolate($message, $context);
+            $log = new Log();
+            $log->message = $newMessage;
+            $log->level = $level;
+            $log->category = $this->category;
+            $log->customFields = $context;
+            $this->driver->log($log);
+        } catch (Exception $e) {
+            // Ignore internal exceptions.
+        }
+    }
+
+    /**
+     * Sets the logging category, also known as channel.
+     *
+     * @param string|null $category
+     * @return void
+     */
+    public function setCategory($category) {
+        $this->category = $category;
     }
 
 }
