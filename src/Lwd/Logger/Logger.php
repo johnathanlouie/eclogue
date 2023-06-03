@@ -83,14 +83,14 @@ class Logger extends AbstractLogger {
     public function log($level, $message, array $context = []) {
         // Must be a PSR-3 level.
         if (!in_array($level, self::$LOG_LEVELS)) {
-            throw new InvalidArgumentException('Not a PSR-3 log level');
+            throw new InvalidArgumentException('Must be a PSR-3 log level');
         }
 
         // Exceptions must be in the 'exception' key.
         // Only exceptions can be in the 'exception' key.
         foreach ($context as $k => $v) {
             if ($v instanceof Exception && $k !== 'exception') {
-                throw new InvalidArgumentException("Exceptions must be in 'exceptions'");
+                throw new InvalidArgumentException("If an Exception object is passed in the context data, it MUST be in the 'exception' key");
             }
         }
 
