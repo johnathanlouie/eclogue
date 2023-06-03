@@ -14,6 +14,7 @@ interface DriverInterface {
      *
      * @param Log $log
      * @return void
+     * @throws Exception
      */
     public function log($log);
 }
