@@ -2,8 +2,8 @@
 
 namespace Lwd\Logger\Drivers;
 
-use Lwd\Logger\ProcessorInterface;
 use Lwd\Logger\FormatterInterface;
+use Lwd\Logger\ProcessorInterface;
 use Lwd\Logger\WriterInterface;
 
 /**
