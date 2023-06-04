@@ -88,7 +88,6 @@ class Logger extends AbstractLogger {
         }
 
         // Exceptions must be in the 'exception' key.
-        // Only exceptions can be in the 'exception' key.
         foreach ($context as $k => $v) {
             if ($v instanceof Exception && $k !== 'exception') {
                 throw new InvalidArgumentException("If an Exception object is passed in the context data, it MUST be in the 'exception' key");
