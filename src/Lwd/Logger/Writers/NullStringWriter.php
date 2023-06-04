@@ -15,11 +15,11 @@ class NullStringWriter implements WriterInterface {
     /**
      * Does nothing.
      *
-     * @param Log $log
-     * @param string $formatted
+     * @param string $payload Log entry as a formatted payload.
+     * @param Log $log Structured log entry.
      * @return void
      */
-    public function write($log, $formatted) {
+    public function write($payload, $log) {
 
     }
 

@@ -42,8 +42,8 @@ class Driver {
         foreach ($this->processors as $processor) {
             $log = $processor->process($log);
         }
-        $formatted = $this->formatter->format($log);
-        $this->writer->write($log, $formatted);
+        $payload = $this->formatter->format($log);
+        $this->writer->write($payload, $log);
     }
 
 }
