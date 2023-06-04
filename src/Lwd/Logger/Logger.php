@@ -3,6 +3,7 @@
 namespace Lwd\Logger;
 
 use Exception;
+use Lwd\Logger\Drivers\Driver;
 use Psr\Log\AbstractLogger;
 use Psr\Log\InvalidArgumentException;
 use Psr\Log\LoggerTrait;
