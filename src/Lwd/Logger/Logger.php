@@ -82,20 +82,9 @@ class Logger extends AbstractLogger {
      * @inheritDoc
      */
     public function log($level, $message, array $context = []) {
-        $logEntry = new LogEntry();
-        $logEntry->category = $this->category;
-
         // Must be a PSR-3 level.
         if (!in_array($level, self::$LOG_LEVELS)) {
             throw new InvalidArgumentException('Must be a PSR-3 log level');
-        }
-        $logEntry->level = $level;
-
-        $logEntry->message = $this->interpolate($message, $context);
-
-        if (isset($context['exception']) && $context['exception'] instanceof Exception) {
-            $logEntry->exception = $context['exception'];
-            unset($context['exception']);
         }
 
         // Exceptions must be in the 'exception' key.
@@ -104,9 +93,14 @@ class Logger extends AbstractLogger {
                 throw new InvalidArgumentException("If an Exception object is passed in the context data, it MUST be in the 'exception' key");
             }
         }
-        $logEntry->customFields = $context;
 
         try {
+            $newMessage = $this->interpolate($message, $context);
+            $logEntry = new LogEntry();
+            $logEntry->message = $newMessage;
+            $logEntry->level = $level;
+            $logEntry->category = $this->category;
+            $logEntry->customFields = $context;
             $this->driver->log($logEntry);
         } catch (Exception $e) {
             // Ignore internal exceptions.
