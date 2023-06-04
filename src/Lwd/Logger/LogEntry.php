@@ -28,6 +28,15 @@ class LogEntry {
     public $category = null;
 
     /** @var string|null */
+    public $requestUrl = null;
+
+    /** @var string|null */
+    public $queryString = null;
+
+    /** @var string|null */
+    public $httpMethod = null;
+
+    /** @var string|null */
     public $serverAddress = null;
 
     /** @var string|null */
