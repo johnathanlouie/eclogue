@@ -32,7 +32,7 @@ class Logger extends AbstractLogger {
 
     use LoggerTrait;
 
-    private $LOG_LEVELS = [
+    private static $LOG_LEVELS = [
         LogLevel::EMERGENCY,
         LogLevel::ALERT,
         LogLevel::CRITICAL,
