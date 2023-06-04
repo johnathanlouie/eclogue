@@ -118,4 +118,13 @@ class Logger extends AbstractLogger {
         $this->category = $category;
     }
 
+    /**
+     * Gets the logging category, also known as channel.
+     *
+     * @return string|null
+     */
+    public function getCategory() {
+        return $this->category;
+    }
+
 }
