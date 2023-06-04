@@ -4,14 +4,14 @@ namespace Lwd\Logger\Writers;
 
 use ErrorException;
 use Lwd\Logger\Log;
-use Lwd\Logger\StringWriterInterface;
+use Lwd\Logger\WriterInterface;
 
 /**
  * Simple log writer for a monolithic file.
  *
  * @author Johnathan Louie
  */
-class FileWriter implements StringWriterInterface {
+class FileWriter implements WriterInterface {
 
     /** @var string File path to log file. */
     private $filename;

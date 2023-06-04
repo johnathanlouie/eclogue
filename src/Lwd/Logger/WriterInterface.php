@@ -9,7 +9,7 @@ use Exception;
  *
  * @author Johnathan Louie
  */
-interface StringWriterInterface {
+interface WriterInterface {
 
     /**
      * Writes the log entry.

@@ -4,7 +4,7 @@ namespace Lwd\Logger\Drivers;
 
 use Lwd\Logger\ProcessorInterface;
 use Lwd\Logger\StringFormatterInterface;
-use Lwd\Logger\StringWriterInterface;
+use Lwd\Logger\WriterInterface;
 
 /**
  * Configurable logging driver.
@@ -19,7 +19,7 @@ class Driver {
     /** @var StringFormatterInterface */
     private $formatter;
 
-    /** @var StringWriterInterface */
+    /** @var WriterInterface */
     private $writer;
 
     /**
@@ -27,7 +27,7 @@ class Driver {
      *
      * @param array $processors
      * @param StringFormatterInterface $formatter
-     * @param StringWriterInterface $writer
+     * @param WriterInterface $writer
      */
     public function __construct($processors, $formatter, $writer) {
         $this->processors = $processors;
