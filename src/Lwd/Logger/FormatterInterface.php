@@ -7,7 +7,7 @@ namespace Lwd\Logger;
  *
  * @author Johnathan Louie
  */
-interface StringFormatterInterface {
+interface FormatterInterface {
 
     /**
      * Formats a log entry into a string.
