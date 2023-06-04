@@ -3,7 +3,7 @@
 namespace Lwd\Logger\Writers;
 
 use ErrorException;
-use Lwd\Logger\Log;
+use Lwd\Logger\LogEntry;
 use Lwd\Logger\WriterInterface;
 
 /**
@@ -29,11 +29,11 @@ class FileWriter implements WriterInterface {
      * Writes the log entry to the file.
      *
      * @param string $payload Log entry as a formatted payload.
-     * @param Log $log Structured log entry.
+     * @param LogEntry $logEntry Structured log entry.
      * @return void
      * @throws ErrorException
      */
-    public function write($payload, $log) {
+    public function write($payload, $logEntry) {
         try {
             set_error_handler(function ($errno, $errstr, $errfile, $errline) {
                 throw new ErrorException($errstr, 0, $errno, $errfile, $errline);

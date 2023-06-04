@@ -38,12 +38,12 @@ class Driver {
     /**
      * @inheritDoc
      */
-    public function log($log) {
+    public function log($logEntry) {
         foreach ($this->processors as $processor) {
-            $log = $processor->process($log);
+            $logEntry = $processor->process($logEntry);
         }
-        $payload = $this->formatter->format($log);
-        $this->writer->write($payload, $log);
+        $payload = $this->formatter->format($logEntry);
+        $this->writer->write($payload, $logEntry);
     }
 
 }

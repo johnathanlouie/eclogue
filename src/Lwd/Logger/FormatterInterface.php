@@ -12,8 +12,8 @@ interface FormatterInterface {
     /**
      * Formats a log entry into a string.
      *
-     * @param Log $log
+     * @param LogEntry $logEntry
      * @return string Formatted log.
      */
-    public function format($log);
+    public function format($logEntry);
 }

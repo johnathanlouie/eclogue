@@ -15,9 +15,9 @@ interface WriterInterface {
      * Writes the log entry.
      *
      * @param string $payload Log entry as a formatted payload.
-     * @param Log $log Structured log entry.
+     * @param LogEntry $logEntry Structured log entry.
      * @return void
      * @throws Exception
      */
-    public function write($payload, $log);
+    public function write($payload, $logEntry);
 }

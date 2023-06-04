@@ -10,7 +10,7 @@ use Exception;
  *
  * @author Johnathan Louie
  */
-class Log {
+class LogEntry {
 
     /** @var string|null */
     public $message = null;

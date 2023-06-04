@@ -14,9 +14,9 @@ interface DriverInterface {
     /**
      * Handles logs.
      *
-     * @param Log $log
+     * @param LogEntry $logEntry
      * @return void
      * @throws Exception
      */
-    public function log($log);
+    public function log($logEntry);
 }

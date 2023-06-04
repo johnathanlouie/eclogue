@@ -2,7 +2,7 @@
 
 namespace Lwd\Logger\Writers;
 
-use Lwd\Logger\Log;
+use Lwd\Logger\LogEntry;
 use Lwd\Logger\WriterInterface;
 
 /**
@@ -16,10 +16,10 @@ class NullStringWriter implements WriterInterface {
      * Does nothing.
      *
      * @param string $payload Log entry as a formatted payload.
-     * @param Log $log Structured log entry.
+     * @param LogEntry $logEntry Structured log entry.
      * @return void
      */
-    public function write($payload, $log) {
+    public function write($payload, $logEntry) {
 
     }
 

@@ -97,12 +97,12 @@ class Logger extends AbstractLogger {
 
         try {
             $newMessage = $this->interpolate($message, $context);
-            $log = new Log();
-            $log->message = $newMessage;
-            $log->level = $level;
-            $log->category = $this->category;
-            $log->customFields = $context;
-            $this->driver->log($log);
+            $logEntry = new LogEntry();
+            $logEntry->message = $newMessage;
+            $logEntry->level = $level;
+            $logEntry->category = $this->category;
+            $logEntry->customFields = $context;
+            $this->driver->log($logEntry);
         } catch (Exception $e) {
             // Ignore internal exceptions.
         }

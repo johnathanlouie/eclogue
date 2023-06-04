@@ -12,8 +12,8 @@ interface ProcessorInterface {
     /**
      * Modifies log data.
      *
-     * @param Log $log
-     * @return Log Modified log.
+     * @param LogEntry $logEntry
+     * @return LogEntry Modified log.
      */
-    public function process($log);
+    public function process($logEntry);
 }

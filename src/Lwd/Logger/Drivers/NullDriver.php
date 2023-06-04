@@ -3,7 +3,7 @@
 namespace Lwd\Logger\Drivers;
 
 use Lwd\Logger\DriverInterface;
-use Lwd\Logger\Log;
+use Lwd\Logger\LogEntry;
 
 /**
  * Log driver that does nothing.
@@ -15,10 +15,10 @@ class NullDriver implements DriverInterface {
     /**
      * Does nothing.
      *
-     * @param Log $log
+     * @param LogEntry $logEntry
      * @return void
      */
-    public function log($log) {
+    public function log($logEntry) {
 
     }
 

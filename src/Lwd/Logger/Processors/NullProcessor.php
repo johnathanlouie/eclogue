@@ -2,7 +2,7 @@
 
 namespace Lwd\Logger\Processors;
 
-use Lwd\Logger\Log;
+use Lwd\Logger\LogEntry;
 use Lwd\Logger\ProcessorInterface;
 
 /**
@@ -15,11 +15,11 @@ class NullProcessor implements ProcessorInterface {
     /**
      * Returns the log entry without modifying it.
      *
-     * @param Log $log
-     * @return Log Unmodified log.
+     * @param LogEntry $logEntry
+     * @return LogEntry Unmodified log.
      */
-    public function process($log) {
-        return $log;
+    public function process($logEntry) {
+        return $logEntry;
     }
 
 }
