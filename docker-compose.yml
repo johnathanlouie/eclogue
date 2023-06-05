@@ -2,5 +2,7 @@ services:
   php:
     build: docker/php
     container_name: logger-php
+    environment:
+      XDEBUG_MODE: develop,coverage
     volumes:
       - .:/app
