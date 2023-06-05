@@ -3,6 +3,7 @@
 namespace Lwd\Logger\Writers;
 
 use ErrorException;
+use Exception;
 use Lwd\Logger\LogEntry;
 use Lwd\Logger\WriterInterface;
 
