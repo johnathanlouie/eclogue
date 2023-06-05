@@ -108,7 +108,7 @@ class LogEntry {
      * Adds a field to the context only if it does not exist yet.
      *
      * @param string|int $name
-     * @param mixe $value
+     * @param mixed $value
      * @return bool True if value was added.
      */
     public function addContextIfNotExist($name, $value) {
