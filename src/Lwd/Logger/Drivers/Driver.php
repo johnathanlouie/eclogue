@@ -2,6 +2,7 @@
 
 namespace Lwd\Logger\Drivers;
 
+use Lwd\Logger\DriverInterface;
 use Lwd\Logger\FormatterInterface;
 use Lwd\Logger\ProcessorInterface;
 use Lwd\Logger\WriterInterface;
@@ -11,7 +12,7 @@ use Lwd\Logger\WriterInterface;
  *
  * @author Johnathan Louie
  */
-class Driver {
+class Driver implements DriverInterface {
 
     /** @var ProcessorInterface[] */
     private $processors = [];
