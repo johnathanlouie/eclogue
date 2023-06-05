@@ -59,26 +59,6 @@ class Logger extends AbstractLogger {
     }
 
     /**
-     * Replaces message placeholders with context.
-     *
-     * @param string $message
-     * @param array $context
-     */
-    private function interpolate($message, $context = []) {
-        // Build a replacement array with braces around the context keys.
-        $replace = [];
-        foreach ($context as $key => $val) {
-            // Check that the value can be cast to string.
-            if (!is_array($val) && (!is_object($val) || method_exists($val, '__toString'))) {
-                $replace['{' . $key . '}'] = $val;
-            }
-        }
-
-        // Interpolate replacement values into the message and return.
-        return strtr($message, $replace);
-    }
-
-    /**
      * @inheritDoc
      */
     public function log($level, $message, array $context = []) {
@@ -106,13 +86,23 @@ class Logger extends AbstractLogger {
     }
 
     /**
-     * Sets the logging category, also known as channel.
+     * Replaces message placeholders with context.
      *
-     * @param string|null $category
-     * @return void
+     * @param string $message
+     * @param array $context
      */
-    public function setCategory($category) {
-        $this->category = $category;
+    private function interpolate($message, $context = []) {
+        // Build a replacement array with braces around the context keys.
+        $replace = [];
+        foreach ($context as $key => $val) {
+            // Check that the value can be cast to string.
+            if (!is_array($val) && (!is_object($val) || method_exists($val, '__toString'))) {
+                $replace['{' . $key . '}'] = $val;
+            }
+        }
+
+        // Interpolate replacement values into the message and return.
+        return strtr($message, $replace);
     }
 
     /**
@@ -122,6 +112,16 @@ class Logger extends AbstractLogger {
      */
     public function getCategory() {
         return $this->category;
+    }
+
+    /**
+     * Sets the logging category, also known as channel.
+     *
+     * @param string|null $category
+     * @return void
+     */
+    public function setCategory($category) {
+        $this->category = $category;
     }
 
 }

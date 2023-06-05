@@ -68,24 +68,6 @@ class LogEntry {
     }
 
     /**
-     * Inserts a value at the desired field name. If the name exists already,
-     * then it keeps prefixing the name with an underscore until the name is
-     * free. Returns the actual name where the insertion happened.
-     *
-     * @param string|int $name Desired field name.
-     * @param mixed $value
-     * @return string|int Actual field name where value was inserted.
-     */
-    public function addContext($name, $value) {
-        $newName = $name;
-        while (array_key_exists($newName, $this->context)) {
-            $newName = "_{$newName}";
-        }
-        $this->context[$newName] = $value;
-        return $newName;
-    }
-
-    /**
      * @return string[] List of context keys.
      */
     public function getContextKeys() {
@@ -102,6 +84,24 @@ class LogEntry {
         foreach ($context as $name => $value) {
             $this->addContext($name, $value);
         }
+    }
+
+    /**
+     * Inserts a value at the desired field name. If the name exists already,
+     * then it keeps prefixing the name with an underscore until the name is
+     * free. Returns the actual name where the insertion happened.
+     *
+     * @param string|int $name Desired field name.
+     * @param mixed $value
+     * @return string|int Actual field name where value was inserted.
+     */
+    public function addContext($name, $value) {
+        $newName = $name;
+        while (array_key_exists($newName, $this->context)) {
+            $newName = "_{$newName}";
+        }
+        $this->context[$newName] = $value;
+        return $newName;
     }
 
     /**

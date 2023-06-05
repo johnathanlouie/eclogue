@@ -26,23 +26,6 @@ class FileWriter implements WriterInterface {
     }
 
     /**
-     * Creates the parent directories if they do not exist.
-     *
-     * @return void
-     * @throws Exception On failure to create directory.
-     */
-    private function mkdir() {
-        if (!is_file($this->filename)) {
-            $dirname = dirname($this->filename);
-            if (!is_dir($dirname)) {
-                if (!mkdir($dirname, 0777, true)) {
-                    throw new Exception("Failed to make '{$dirname}' directory");
-                }
-            }
-        }
-    }
-
-    /**
      * Writes the log entry to the file.
      *
      * @param string $payload Log entry as a formatted payload.
@@ -65,6 +48,23 @@ class FileWriter implements WriterInterface {
             throw $e;
         } finally {
             restore_error_handler();
+        }
+    }
+
+    /**
+     * Creates the parent directories if they do not exist.
+     *
+     * @return void
+     * @throws Exception On failure to create directory.
+     */
+    private function mkdir() {
+        if (!is_file($this->filename)) {
+            $dirname = dirname($this->filename);
+            if (!is_dir($dirname)) {
+                if (!mkdir($dirname, 0777, true)) {
+                    throw new Exception("Failed to make '{$dirname}' directory");
+                }
+            }
         }
     }
 
