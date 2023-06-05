@@ -96,7 +96,7 @@ class GelfFormatter implements FormatterInterface {
         ];
 
         if (array_key_exists($logEntry->getLevel(), self::$SYSLOG_LEVELS)) {
-            $object['level'] = self::$SYSLOG_LEVELS[$logEntry->level];
+            $object['level'] = self::$SYSLOG_LEVELS[$logEntry->getLevel()];
         }
 
         foreach ($logEntry->getContextKeys() as $k) {
