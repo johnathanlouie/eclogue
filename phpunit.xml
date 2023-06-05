@@ -7,7 +7,7 @@
     forceCoversAnnotation="true"
 >
     <testsuites>
-        <testsuite>
+        <testsuite name="default">
             <directory>tests/unit</directory>
         </testsuite>
     </testsuites>
