@@ -32,7 +32,7 @@ class FileWriter implements WriterInterface {
      * @param string $payload Log entry as a formatted payload.
      * @param LogEntry $logEntry Structured log entry.
      * @return void
-     * @throws ErrorException
+     * @throws Exception
      */
     public function write($payload, $logEntry) {
         try {
@@ -46,7 +46,7 @@ class FileWriter implements WriterInterface {
                 throw new ErrorException("Failed to write log entry to '{$this->filename}'");
             }
         } catch (Exception $e) {
-            throw $e;
+            throw new Exception("FileWriter exception: {$e->getMessage()}", 0, $e);
         } finally {
             restore_error_handler();
         }
