@@ -26,7 +26,7 @@ class FileWriterTest extends TestCase {
         for ($i = 1; $i <= 3; $i++) {
             $text = $faker->realText();
             $fileContentsExpected .= $text . PHP_EOL;
-            $writer->write($text, self::getMockBuilder(LogEntry::class));
+            $writer->write($text, new LogEntry('', ''));
             self::assertFileExists($filepath, "'{$filepath}' should exist on try {$i}");
             $fileContentsActual = file_get_contents($filepath);
             self::assertNotFalse($fileContentsActual, "Failed to read '{$filepath}' on try {$i}");
