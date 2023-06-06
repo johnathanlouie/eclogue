@@ -2,6 +2,7 @@
 
 namespace Lwd\Logger\Writers;
 
+use Exception;
 use Faker\Factory;
 use Lwd\Logger\LogEntry;
 use PHPUnit\Framework\TestCase;
@@ -11,6 +12,9 @@ use PHPUnit\Framework\TestCase;
  */
 class FileWriterTest extends TestCase {
 
+    /**
+     * @throws Exception
+     */
     public function testWrite() {
         $faker = Factory::create();
         self::rrmdir('/fake');
