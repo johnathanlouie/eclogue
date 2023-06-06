@@ -13,6 +13,10 @@ use PHPUnit\Framework\TestCase;
 class FileWriterTest extends TestCase {
 
     /**
+     * @covers \Lwd\Logger\LogEntry::__construct
+     * @covers \Lwd\Logger\Writers\FileWriter::__construct
+     * @covers \Lwd\Logger\Writers\FileWriter::mkdir
+     * @covers \Lwd\Logger\Writers\FileWriter::write
      * @throws Exception
      */
     public function testWrite() {
