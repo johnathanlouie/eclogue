@@ -15,7 +15,7 @@ class LogEntry {
     /** @var string */
     private $level;
 
-    /** @var mixed[] Extra log fields. */
+    /** @var array Extra log fields. */
     private $context = [];
 
     /**
@@ -77,7 +77,7 @@ class LogEntry {
     /**
      * Adds a context array without overwriting existing keys.
      *
-     * @param mixed[] $context
+     * @param array $context
      * @return void
      */
     public function addContextArray($context) {
