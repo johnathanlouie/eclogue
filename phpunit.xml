@@ -5,6 +5,7 @@
     convertNoticesToExceptions="false"
     convertWarningsToExceptions="false"
     forceCoversAnnotation="true"
+    bootstrap="vendor/autoload.php"
 >
     <testsuites>
         <testsuite name="default">
