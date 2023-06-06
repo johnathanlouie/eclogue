@@ -2,8 +2,5 @@ services:
   php:
     build: docker/php
     container_name: logger-php
-    environment:
-      XDEBUG_MODE: develop,debug,coverage,trace
-      XDEBUG_CONFIG: client_host=host.docker.internal
     volumes:
       - .:/app
