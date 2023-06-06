@@ -10,7 +10,7 @@ use Lwd\Logger\WriterInterface;
  *
  * @author Johnathan Louie
  */
-class NullStringWriter implements WriterInterface {
+class NullWriter implements WriterInterface {
 
     /**
      * Does nothing.
