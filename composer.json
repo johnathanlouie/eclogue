@@ -29,10 +29,8 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Lwd\\Logger\\": [
-                "tests/unit/Lwd/Logger/",
-                "tests/integration/Lwd/Logger/"
-            ]
+            "Unit\\Lwd\\Logger\\": "tests/Unit/Lwd/Logger/",
+            "Integration\\Lwd\\Logger\\": "tests/Integration/Lwd/Logger/"
         }
     },
     "provide": {

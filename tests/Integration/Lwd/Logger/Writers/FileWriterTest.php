@@ -1,10 +1,11 @@
 <?php
 
-namespace Lwd\Logger\Writers;
+namespace Integration\Lwd\Logger\Writers;
 
 use Exception;
 use Faker\Factory;
 use Lwd\Logger\LogEntry;
+use Lwd\Logger\Writers\FileWriter;
 use PHPUnit\Framework\TestCase;
 
 /**
