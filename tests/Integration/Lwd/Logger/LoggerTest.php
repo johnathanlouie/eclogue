@@ -22,12 +22,16 @@ class LoggerTest extends TestCase {
 
     /**
      * @covers \Lwd\Logger\Drivers\Driver
+     * @covers \Lwd\Logger\Drivers\MultiDriver
+     * @covers \Lwd\Logger\Drivers\NullDriver
      * @covers \Lwd\Logger\Formatters\GelfFormatter
      * @covers \Lwd\Logger\LogEntry
      * @covers \Lwd\Logger\Logger
      * @covers \Lwd\Logger\Processors\NullProcessor
      * @covers \Lwd\Logger\Processors\WebProcessor
      * @covers \Lwd\Logger\Writers\FileWriter
+     * @covers \Lwd\Logger\Writers\MultiWriter
+     * @covers \Lwd\Logger\Writers\NullWriter
      * @throws Exception
      */
     public function testWrite() {
