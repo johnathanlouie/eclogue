@@ -17,13 +17,13 @@ use PHPUnit\Framework\TestCase;
 class LoggerTest extends TestCase {
 
     /**
-     * @covers \Lwd\Logger\LogEntry
-     * @covers \Lwd\Logger\Writers\FileWriter
      * @covers \Lwd\Logger\Drivers\Driver
      * @covers \Lwd\Logger\Formatters\GelfFormatter
+     * @covers \Lwd\Logger\LogEntry
+     * @covers \Lwd\Logger\Logger
      * @covers \Lwd\Logger\Processors\NullProcessor
      * @covers \Lwd\Logger\Processors\WebProcessor
-     * @covers \Lwd\Logger\Logger
+     * @covers \Lwd\Logger\Writers\FileWriter
      * @throws Exception
      */
     public function testWrite() {
