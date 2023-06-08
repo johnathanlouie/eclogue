@@ -57,12 +57,24 @@ class LoggerTest extends TestCase {
         $driver = new MultiDriver($drivers);
         $logger = new Logger($driver);
 
+        $category = $logger->getCategory();
+        self::assertSame(null, $category, 'Default category should be null');
         $logger->emergency('What is a message?', ['timestamp' => 0]);
         $fileContentsExpected .= '{"version":"1.1","host":"127.0.0.1","short_message":"What is a message?","timestamp":0,"level":0,"_category":null,"_client_address":false,"_request_url":null,"_query_string":null,"_http_method":null}' . PHP_EOL;
         self::assertFileExists($filepath, "Emergency log should create '{$filepath}'");
         $fileContentsActual = file_get_contents($filepath);
         self::assertNotFalse($fileContentsActual, "Failed to read '{$filepath}' after logging emergency");
         self::assertSame($fileContentsExpected, $fileContentsActual, "'{$filepath}' contents did not match after logging emergency");
+
+//        $logger->setCategory('new_category');
+//        $category = $logger->getCategory();
+//        self::assertSame('new_category', $category, 'Updated category should be new_category');
+//        $logger->critical("\t\n\v\f\r !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~", ['timestamp' => 123.456]);
+//        $fileContentsExpected .= '{"version":"1.1","host":"127.0.0.1","short_message":"What is a message?","timestamp":0,"level":0,"_category":null,"_client_address":false,"_request_url":null,"_query_string":null,"_http_method":null}' . PHP_EOL;
+//        self::assertFileExists($filepath, "Critical log should create '{$filepath}'");
+//        $fileContentsActual = file_get_contents($filepath);
+//        self::assertNotFalse($fileContentsActual, "Failed to read '{$filepath}' after logging emergency");
+//        self::assertSame($fileContentsExpected, $fileContentsActual, "'{$filepath}' contents did not match after logging emergency");
 
         self::rrmdir('/fake');
         self::assertFalse(is_dir('/fake'), 'Cleaning up /fake failed');
