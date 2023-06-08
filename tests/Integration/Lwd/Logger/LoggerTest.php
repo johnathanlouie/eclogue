@@ -11,6 +11,8 @@ use Lwd\Logger\Logger;
 use Lwd\Logger\Processors\NullProcessor;
 use Lwd\Logger\Processors\WebProcessor;
 use Lwd\Logger\Writers\FileWriter;
+use Lwd\Logger\Writers\MultiWriter;
+use Lwd\Logger\Writers\NullWriter;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -39,7 +41,11 @@ class LoggerTest extends TestCase {
             new WebProcessor(),
         ];
         $formatter = new GelfFormatter();
-        $writer = new FileWriter($filepath);
+        $writers = [
+            new NullWriter(),
+            new FileWriter($filepath),
+        ];
+        $writer = new MultiWriter($writers);
         $drivers = [
             new NullDriver(),
             new Driver($processors, $formatter, $writer),
