@@ -4,6 +4,8 @@ namespace Integration\Lwd\Logger;
 
 use Exception;
 use Lwd\Logger\Drivers\Driver;
+use Lwd\Logger\Drivers\MultiDriver;
+use Lwd\Logger\Drivers\NullDriver;
 use Lwd\Logger\Formatters\GelfFormatter;
 use Lwd\Logger\Logger;
 use Lwd\Logger\Processors\NullProcessor;
@@ -38,7 +40,11 @@ class LoggerTest extends TestCase {
         ];
         $formatter = new GelfFormatter();
         $writer = new FileWriter($filepath);
-        $driver = new Driver($processors, $formatter, $writer);
+        $drivers = [
+            new NullDriver(),
+            new Driver($processors, $formatter, $writer),
+        ];
+        $driver = new MultiDriver($drivers);
         $logger = new Logger($driver);
 
         $logger->emergency('What is a message?', ['timestamp' => 0]);
