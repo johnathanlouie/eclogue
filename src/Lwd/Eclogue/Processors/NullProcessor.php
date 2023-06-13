@@ -1,9 +1,9 @@
 <?php
 
-namespace Lwd\Logger\Processors;
+namespace Lwd\Eclogue\Processors;
 
-use Lwd\Logger\LogEntry;
-use Lwd\Logger\ProcessorInterface;
+use Lwd\Eclogue\LogEntry;
+use Lwd\Eclogue\ProcessorInterface;
 
 /**
  * Processor that does nothing.

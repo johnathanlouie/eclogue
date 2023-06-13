@@ -1,9 +1,9 @@
 <?php
 
-namespace Lwd\Logger;
+namespace Lwd\Eclogue;
 
 use Exception;
-use Lwd\Logger\Drivers\Driver;
+use Lwd\Eclogue\Drivers\Driver;
 use Psr\Log\AbstractLogger;
 use Psr\Log\InvalidArgumentException;
 use Psr\Log\LoggerTrait;

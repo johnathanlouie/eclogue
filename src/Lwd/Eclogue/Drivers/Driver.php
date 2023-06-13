@@ -1,11 +1,11 @@
 <?php
 
-namespace Lwd\Logger\Drivers;
+namespace Lwd\Eclogue\Drivers;
 
-use Lwd\Logger\DriverInterface;
-use Lwd\Logger\FormatterInterface;
-use Lwd\Logger\ProcessorInterface;
-use Lwd\Logger\WriterInterface;
+use Lwd\Eclogue\DriverInterface;
+use Lwd\Eclogue\FormatterInterface;
+use Lwd\Eclogue\ProcessorInterface;
+use Lwd\Eclogue\WriterInterface;
 
 /**
  * Configurable logging driver.

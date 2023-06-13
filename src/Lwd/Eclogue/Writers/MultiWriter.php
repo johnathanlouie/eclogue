@@ -1,9 +1,9 @@
 <?php
 
-namespace Lwd\Logger\Writers;
+namespace Lwd\Eclogue\Writers;
 
 use Exception;
-use Lwd\Logger\WriterInterface;
+use Lwd\Eclogue\WriterInterface;
 
 /**
  * Log driver that runs multiple drivers sequentially. All drivers will attempt to run even if exceptions happen to

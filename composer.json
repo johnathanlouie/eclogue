@@ -1,5 +1,5 @@
 {
-    "name": "lwd/logger",
+    "name": "lwd/eclogue",
     "description": "Sends your logs to files, sockets, inboxes, databases and various web services",
     "keywords": ["log", "logging", "psr-3"],
     "type": "library",
@@ -24,13 +24,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Lwd\\Logger\\": "src/Lwd/Logger/"
+            "Lwd\\Eclogue\\": "src/Lwd/Eclogue/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Unit\\Lwd\\Logger\\": "tests/Unit/Lwd/Logger/",
-            "Integration\\Lwd\\Logger\\": "tests/Integration/Lwd/Logger/"
+            "Unit\\Lwd\\Eclogue\\": "tests/Unit/Lwd/Eclogue/",
+            "Integration\\Lwd\\Eclogue\\": "tests/Integration/Lwd/Eclogue/"
         }
     },
     "provide": {

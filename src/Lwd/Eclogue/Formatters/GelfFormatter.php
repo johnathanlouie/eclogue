@@ -1,11 +1,11 @@
 <?php
 
-namespace Lwd\Logger\Formatters;
+namespace Lwd\Eclogue\Formatters;
 
 use DateTime;
 use Exception;
-use Lwd\Logger\FormatterInterface;
-use Lwd\Logger\LogEntry;
+use Lwd\Eclogue\FormatterInterface;
+use Lwd\Eclogue\LogEntry;
 use Psr\Log\LogLevel;
 
 /**

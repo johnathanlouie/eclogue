@@ -1,9 +1,9 @@
 <?php
 
-namespace Lwd\Logger\Writers;
+namespace Lwd\Eclogue\Writers;
 
-use Lwd\Logger\LogEntry;
-use Lwd\Logger\WriterInterface;
+use Lwd\Eclogue\LogEntry;
+use Lwd\Eclogue\WriterInterface;
 
 /**
  * Log writer that does nothing.

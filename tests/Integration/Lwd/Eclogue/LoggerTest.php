@@ -1,18 +1,18 @@
 <?php
 
-namespace Integration\Lwd\Logger;
+namespace Integration\Lwd\Eclogue;
 
 use Exception;
-use Lwd\Logger\Drivers\Driver;
-use Lwd\Logger\Drivers\MultiDriver;
-use Lwd\Logger\Drivers\NullDriver;
-use Lwd\Logger\Formatters\GelfFormatter;
-use Lwd\Logger\Logger;
-use Lwd\Logger\Processors\NullProcessor;
-use Lwd\Logger\Processors\WebProcessor;
-use Lwd\Logger\Writers\FileWriter;
-use Lwd\Logger\Writers\MultiWriter;
-use Lwd\Logger\Writers\NullWriter;
+use Lwd\Eclogue\Drivers\Driver;
+use Lwd\Eclogue\Drivers\MultiDriver;
+use Lwd\Eclogue\Drivers\NullDriver;
+use Lwd\Eclogue\Formatters\GelfFormatter;
+use Lwd\Eclogue\Logger;
+use Lwd\Eclogue\Processors\NullProcessor;
+use Lwd\Eclogue\Processors\WebProcessor;
+use Lwd\Eclogue\Writers\FileWriter;
+use Lwd\Eclogue\Writers\MultiWriter;
+use Lwd\Eclogue\Writers\NullWriter;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -21,17 +21,17 @@ use PHPUnit\Framework\TestCase;
 class LoggerTest extends TestCase {
 
     /**
-     * @covers \Lwd\Logger\Drivers\Driver
-     * @covers \Lwd\Logger\Drivers\MultiDriver
-     * @covers \Lwd\Logger\Drivers\NullDriver
-     * @covers \Lwd\Logger\Formatters\GelfFormatter
-     * @covers \Lwd\Logger\LogEntry
-     * @covers \Lwd\Logger\Logger
-     * @covers \Lwd\Logger\Processors\NullProcessor
-     * @covers \Lwd\Logger\Processors\WebProcessor
-     * @covers \Lwd\Logger\Writers\FileWriter
-     * @covers \Lwd\Logger\Writers\MultiWriter
-     * @covers \Lwd\Logger\Writers\NullWriter
+     * @covers \Lwd\Eclogue\Drivers\Driver
+     * @covers \Lwd\Eclogue\Drivers\MultiDriver
+     * @covers \Lwd\Eclogue\Drivers\NullDriver
+     * @covers \Lwd\Eclogue\Formatters\GelfFormatter
+     * @covers \Lwd\Eclogue\LogEntry
+     * @covers \Lwd\Eclogue\Logger
+     * @covers \Lwd\Eclogue\Processors\NullProcessor
+     * @covers \Lwd\Eclogue\Processors\WebProcessor
+     * @covers \Lwd\Eclogue\Writers\FileWriter
+     * @covers \Lwd\Eclogue\Writers\MultiWriter
+     * @covers \Lwd\Eclogue\Writers\NullWriter
      * @throws Exception
      */
     public function testWrite() {

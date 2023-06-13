@@ -1,6 +1,6 @@
 <?php
 
-namespace Unit\Lwd\Logger;
+namespace Unit\Lwd\Eclogue;
 
 use PHPUnit\Framework\TestCase;
 

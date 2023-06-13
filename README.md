@@ -1,1 +1,1 @@
-# lwd-logger
+# Eclogue

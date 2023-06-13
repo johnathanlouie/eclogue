@@ -1,6 +1,6 @@
 <?php
 
-namespace Lwd\Logger;
+namespace Lwd\Eclogue;
 
 /**
  * Log formatter that returns logs as strings.

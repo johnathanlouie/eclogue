@@ -1,6 +1,6 @@
 <?php
 
-namespace Lwd\Logger;
+namespace Lwd\Eclogue;
 
 /**
  * Data object for log entries.

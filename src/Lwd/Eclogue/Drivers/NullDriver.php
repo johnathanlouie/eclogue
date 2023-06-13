@@ -1,9 +1,9 @@
 <?php
 
-namespace Lwd\Logger\Drivers;
+namespace Lwd\Eclogue\Drivers;
 
-use Lwd\Logger\DriverInterface;
-use Lwd\Logger\LogEntry;
+use Lwd\Eclogue\DriverInterface;
+use Lwd\Eclogue\LogEntry;
 
 /**
  * Log driver that does nothing.

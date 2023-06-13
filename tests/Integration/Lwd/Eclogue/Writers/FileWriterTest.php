@@ -1,11 +1,11 @@
 <?php
 
-namespace Integration\Lwd\Logger\Writers;
+namespace Integration\Lwd\Eclogue\Writers;
 
 use Exception;
 use Faker\Factory;
-use Lwd\Logger\LogEntry;
-use Lwd\Logger\Writers\FileWriter;
+use Lwd\Eclogue\LogEntry;
+use Lwd\Eclogue\Writers\FileWriter;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -14,10 +14,10 @@ use PHPUnit\Framework\TestCase;
 class FileWriterTest extends TestCase {
 
     /**
-     * @covers \Lwd\Logger\LogEntry::__construct
-     * @covers \Lwd\Logger\Writers\FileWriter::__construct
-     * @covers \Lwd\Logger\Writers\FileWriter::mkdir
-     * @covers \Lwd\Logger\Writers\FileWriter::write
+     * @covers \Lwd\Eclogue\LogEntry::__construct
+     * @covers \Lwd\Eclogue\Writers\FileWriter::__construct
+     * @covers \Lwd\Eclogue\Writers\FileWriter::mkdir
+     * @covers \Lwd\Eclogue\Writers\FileWriter::write
      * @throws Exception
      */
     public function testWrite() {

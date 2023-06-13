@@ -1,9 +1,9 @@
 <?php
 
-namespace Lwd\Logger\Processors;
+namespace Lwd\Eclogue\Processors;
 
-use Lwd\Logger\LogEntry;
-use Lwd\Logger\ProcessorInterface;
+use Lwd\Eclogue\LogEntry;
+use Lwd\Eclogue\ProcessorInterface;
 
 /**
  * Log data processor for adding data from the current web request.
