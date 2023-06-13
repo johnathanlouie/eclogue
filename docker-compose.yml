@@ -1,6 +1,6 @@
 services:
   php:
     build: docker/php
-    container_name: logger-php
+    container_name: php
     volumes:
       - .:/app
